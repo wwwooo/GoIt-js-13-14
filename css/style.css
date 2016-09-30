@@ -29,7 +29,7 @@ label {
   margin-left: 30px;
 }
 
-label > span {
+.cbx {
   position: absolute;
   left: -20px;
   top: 3px;
@@ -40,7 +40,7 @@ label > span {
   vertical-align: middle;
 }
 
-input:checked + span {
+input:checked + .cbx {
   background: red;
 }
 
