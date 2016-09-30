@@ -15,7 +15,7 @@
         <form action="#">
             <ol>
             <% for (var i = 0; i < questions.length; i++) { %>
-                <li>
+                <li class="question-wrap">
                     <span class="question"><%= questions[i].question %></span>
                     <% for (var n = 0; n < questions[i].answers.length; n++) { %>
                         <label>

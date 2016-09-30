@@ -41,22 +41,13 @@ $(function() {
         event.preventDefault();
         var countAnswers = 0;
 
-        $(this).find('li').each(function() {
+        $(this).find('.question-wrap').each(function(i) {
+            var radio = $(this).find('input');
             var checked = $(this).find(':checked');
-
+            
             if (checked.length > 0) {
-                var q = $(this).children('.question').html();
-
-                for (var i = 0; i < data.questions.length; i++) {
-                    if (data.questions[i].question === q) {
-                        var answer = checked.siblings('.answer').text();
-                        var right_answer = data.questions[i].answers[data.questions[i].right_answer];
-
-                        if (answer == right_answer) {
-                            countAnswers++;
-                        }
-                        break;
-                    }
+                if (radio.index(checked) == data.questions[i].right_answer) {
+                    countAnswers++;
                 }
             }
         });
